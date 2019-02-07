@@ -8,7 +8,13 @@ import api from '../services/api';
 export default class Timeline extends Component {
 
   state = {
+    tweets: [],
     newTweet: ''
+  }
+
+  async componentDidMount() {
+    const response = await api.get('tweets');
+    this.setState({ tweets: response.data });
   }
 
   handleInputChange = event => {
@@ -40,9 +46,7 @@ export default class Timeline extends Component {
             placeholder="O que está acontecendo?"
           ></textarea>
         </form>
-        <ul>
-
-        </ul>
+        {this.state.tweets.map(tweet => <h1>{tweet.content}</h1>)}
       </div>
     );
   }
