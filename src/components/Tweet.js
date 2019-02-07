@@ -2,8 +2,21 @@ import React, { Component } from 'react';
 
 import './Tweet.css';
 
+import like from '../like.svg';
+
 export default class Tweet extends Component {
   render() {
-    return <h1>{this.props.tweet.content}</h1>;
+    const { tweet } = this.props;
+
+    return (
+      <li className="tweet">
+        <strong>{tweet.author}</strong>
+        <p>{tweet.content}</p>
+        <button type="button">
+          <img src={like} alt="Like" />
+          {tweet.likes}
+        </button>
+      </li>
+    );
   }
 }
