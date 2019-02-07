@@ -49,7 +49,7 @@ export default class Timeline extends Component {
           ></textarea>
         </form>
         {this.state.tweets.map(tweet => (
-          <Tweet />
+          <Tweet key={tweet._id} tweet={tweet} />
         ))}
       </div>
     );
