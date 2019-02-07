@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './Timeline.css';
 import twitterLogo from '../twitter.svg';
 
+import api from '../services/api';
+
 export default class Timeline extends Component {
 
   state = {
@@ -15,11 +17,15 @@ export default class Timeline extends Component {
     });
   }
 
-  handleNewTweet = event => {
+  handleNewTweet = async event => {
     if (event.keyCode !== 13) return;
     const content = this.state.newTweet;
     const author = localStorage.getItem('@GoTwitter:username');
     console.log(content, author);
+
+    await api.post('tweets', { content, author });
+
+    this.setState({ newTweet: '' });
   }
 
   render() {
