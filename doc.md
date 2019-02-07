@@ -2,6 +2,7 @@
 #yarn start
 #yarn add react-router-dom
 #yarn add axios
+#yarn add socket.io-client
 
 ############
 yarn start
