@@ -26,7 +26,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className='login-wrapper'>
-        <img src={tweeterLogo} alt="Logotipo do Tweeter" />
+        <img src={tweeterLogo} alt="Logotipo do Twitter" />
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.username}
