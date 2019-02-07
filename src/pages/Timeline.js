@@ -26,7 +26,6 @@ export default class Timeline extends Component {
     return (
       <div className="timeline-wrapper">
         <img height={24} src={twitterLogo} alt="Logotipo do Twitter" />
-
         <form>
           <textarea
             value={this.state.newTweet}
